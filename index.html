@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-Powered Hybrid Movie Recommendation Engine utilizing SVD Matrix Factorization and Mean-Centered Collaborative Filtering.">
+    <title>CineMatch AI - Premium Hybrid Recommendation System</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="background-glows">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="glow glow-3"></div>
+    </div>
+
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo-area">
+                <i class="fa-solid fa-wand-magic-sparkles logo-icon"></i>
+                <span class="logo-text">CineMatch <span class="accent-text">AI</span></span>
+            </div>
+            <nav class="side-nav">
+                <a href="#" class="nav-item active" id="nav-dashboard"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+                <a href="#recommendation-section" class="nav-item" id="nav-recommender"><i class="fa-solid fa-film"></i> Recommender</a>
+                <a href="#rating-section" class="nav-item" id="nav-ratings"><i class="fa-solid fa-star"></i> Simulator</a>
+                <a href="https://github.com" target="_blank" class="nav-item"><i class="fa-solid fa-book"></i> Documentation</a>
+            </nav>
+            <div class="user-profile-badge">
+                <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Dharani" alt="User Avatar" class="profile-img">
+                <div class="profile-info">
+                    <span class="profile-name">Guest Mode</span>
+                    <span class="profile-role">Testing Engine</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header">
+                <div class="header-search">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="movie-catalog-search" placeholder="Search catalog by title or genre...">
+                    <div class="search-dropdown" id="search-dropdown-results"></div>
+                </div>
+                <div class="system-status">
+                    <span class="status-pulse"></span>
+                    <span class="status-text">AI Models Active</span>
+                </div>
+            </header>
+
+            <!-- Dashboard View -->
+            <section class="dashboard-view animated-fadeIn" id="dashboard-view-content">
+                <!-- Hero Section -->
+                <div class="hero-banner">
+                    <div class="hero-content">
+                        <h1>Discover the Power of <br><span class="accent-gradient">Hybrid Machine Learning</span></h1>
+                        <p>Combining User-Based Collaborative Filtering and Latent Matrix Factorization (SVD) for highly accurate movie predictions.</p>
+                        <a href="#recommendation-section" class="btn btn-primary btn-glow">Get Started <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="hero-illustration">
+                        <div class="circle-graphic">
+                            <i class="fa-solid fa-server db-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Overview Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card glass-panel card-glow-purple">
+                        <div class="stat-icon purple-bg"><i class="fa-solid fa-users"></i></div>
+                        <div class="stat-details">
+                            <h3>{{ num_users }}</h3>
+                            <p>Active Users</p>
+                        </div>
+                    </div>
+                    <div class="stat-card glass-panel card-glow-cyan">
+                        <div class="stat-icon cyan-bg"><i class="fa-solid fa-clapperboard"></i></div>
+                        <div class="stat-details">
+                            <h3>{{ num_movies }}</h3>
+                            <p>Movie Database</p>
+                        </div>
+                    </div>
+                    <div class="stat-card glass-panel card-glow-green">
+                        <div class="stat-icon green-bg"><i class="fa-solid fa-database"></i></div>
+                        <div class="stat-details">
+                            <h3>{{ num_ratings }}</h3>
+                            <p>Simulated Ratings</p>
+                        </div>
+                    </div>
+                    <div class="stat-card glass-panel card-glow-orange">
+                        <div class="stat-icon orange-bg"><i class="fa-solid fa-star-half-stroke"></i></div>
+                        <div class="stat-details">
+                            <h3>{{ avg_rating }} / 5.0</h3>
+                            <p>Average Rating</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions / Hybrid Mechanics -->
+                <div class="double-layout-grid">
+                    <!-- Info Box -->
+                    <div class="glass-panel info-box">
+                        <h2><i class="fa-solid fa-gears"></i> Engine Architecture</h2>
+                        <p>This system uses a dual-engine architecture to optimize recommendation accuracy:</p>
+                        <ul class="engine-features">
+                            <li>
+                                <span class="bullet purple"></span>
+                                <div>
+                                    <strong>Collaborative Filtering (40% Weight):</strong>
+                                    <span>Analyzes correlation vectors between users using Mean-Centered Cosine Similarity. Perfect for high-density shared tastes.</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="bullet cyan"></span>
+                                <div>
+                                    <strong>SVD Matrix Factorization (60% Weight):</strong>
+                                    <span>Projects user ratings into a 15-dimensional latent semantic space. Resolves matrix sparsity issues and extracts hidden structural associations.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Top Movie Highlights -->
+                    <div class="glass-panel popular-list-panel">
+                        <h2><i class="fa-solid fa-fire"></i> Global Top Picks (Bayesian Weighted)</h2>
+                        <div class="popular-movies-list">
+                            {% for movie in popular_movies %}
+                            <div class="popular-movie-item">
+                                <div class="movie-rank-badge">#{{ loop.index }}</div>
+                                <div class="movie-info-block">
+                                    <h4>{{ movie.title }}</h4>
+                                    <span class="movie-genres-pill">{{ movie.genres.replace('|', ' • ') }}</span>
+                                </div>
+                                <div class="movie-score-badge">
+                                    <i class="fa-solid fa-star text-gold"></i>
+                                    <span>{{ "%.2f" | format(movie.weighted_score) }}</span>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recommendation Interactive Sandbox -->
+            <section class="interactive-section glass-panel" id="recommendation-section">
+                <div class="section-title-bar">
+                    <h2><i class="fa-solid fa-compass"></i> Recommendation Sandbox</h2>
+                    <p>Select target parameters, filter algorithms, and observe instant predictions.</p>
+                </div>
+
+                <!-- Filters Control Bar -->
+                <div class="filter-controls">
+                    <div class="control-group">
+                        <label for="select-user-id"><i class="fa-solid fa-user-tag"></i> Target User</label>
+                        <select id="select-user-id" class="custom-select">
+                            {% for i in range(1, 21) %}
+                            <option value="{{ i }}">User {{ i }} (Simulated Profile)</option>
+                            {% endfor %}
+                            <option value="999">User 999 (New User - Cold Start)</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="select-algorithm"><i class="fa-solid fa-laptop-code"></i> Algorithm Model</label>
+                        <select id="select-algorithm" class="custom-select">
+                            <option value="hybrid" selected>Hybrid Engine (CF + SVD)</option>
+                            <option value="svd">SVD Matrix Factorization</option>
+                            <option value="cf">Collaborative Filtering (CF)</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="select-genre"><i class="fa-solid fa-masks-theater"></i> Genre Filter</label>
+                        <select id="select-genre" class="custom-select">
+                            <option value="All">All Genres</option>
+                            {% for genre in genres %}
+                            <option value="{{ genre }}">{{ genre }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <button class="btn btn-primary" id="btn-fetch-recs"><i class="fa-solid fa-bolt"></i> Generate</button>
+                </div>
+
+                <!-- Recommendation Output Screen -->
+                <div class="recommender-output-area">
+                    <!-- Loading State -->
+                    <div class="loader-container" id="recs-loader" style="display: none;">
+                        <div class="quantum-spinner"></div>
+                        <p>Recalculating recommendation matrices...</p>
+                    </div>
+
+                    <!-- Output Grid -->
+                    <div class="output-split-grid" id="recs-output-container">
+                        <!-- Left Panel: User Profile Taste Profile -->
+                        <div class="taste-profile-panel">
+                            <h3><i class="fa-solid fa-heart"></i> Target User History</h3>
+                            <p class="panel-subtitle">Movies rated highest by this user in the training set.</p>
+                            <div class="history-list" id="user-history-list">
+                                <!-- Dynamically populated -->
+                            </div>
+                        </div>
+
+                        <!-- Right Panel: Recommended Items -->
+                        <div class="recs-results-panel">
+                            <h3><i class="fa-solid fa-gift"></i> Recommended for You</h3>
+                            <p class="panel-subtitle">Top predicted preferences that this user has not watched yet.</p>
+                            <div class="recs-cards-grid" id="recs-cards-container">
+                                <!-- Dynamically populated -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Simulator Widget Section -->
+            <section class="interactive-section glass-panel" id="rating-section">
+                <div class="section-title-bar">
+                    <h2><i class="fa-solid fa-gamepad"></i> Interactive Rating Simulator</h2>
+                    <p>Submit a new rating for a movie to immediately update recommendation outputs and retrain the CF memory weights.</p>
+                </div>
+
+                <div class="simulator-layout">
+                    <!-- Left: Search and Select Movie -->
+                    <div class="simulator-form">
+                        <div class="control-group">
+                            <label for="sim-user-id"><i class="fa-solid fa-user"></i> Simulated User ID</label>
+                            <select id="sim-user-id" class="custom-select">
+                                {% for i in range(1, 11) %}
+                                <option value="{{ i }}">User {{ i }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        
+                        <div class="control-group relative-position">
+                            <label for="sim-movie-search"><i class="fa-solid fa-search"></i> Search Movie Catalog</label>
+                            <input type="text" id="sim-movie-search" class="custom-input" placeholder="Type title to find movie...">
+                            <div class="search-dropdown" id="sim-search-dropdown-results"></div>
+                        </div>
+
+                        <div class="selected-movie-info-card" id="selected-movie-details" style="display: none;">
+                            <h4 id="selected-movie-title">Inception (2010)</h4>
+                            <span id="selected-movie-genres" class="movie-genres-pill">Sci-Fi • Action</span>
+                            <input type="hidden" id="selected-movie-id">
+                        </div>
+
+                        <div class="control-group">
+                            <label><i class="fa-regular fa-star"></i> Assign Rating (1 to 5 Stars)</label>
+                            <div class="star-rating-widget">
+                                <i class="fa-regular fa-star star-btn" data-value="1"></i>
+                                <i class="fa-regular fa-star star-btn" data-value="2"></i>
+                                <i class="fa-regular fa-star star-btn" data-value="3"></i>
+                                <i class="fa-regular fa-star star-btn" data-value="4"></i>
+                                <i class="fa-regular fa-star star-btn" data-value="5"></i>
+                            </div>
+                            <input type="hidden" id="selected-star-value" value="0">
+                        </div>
+
+                        <button class="btn btn-secondary btn-full-width" id="btn-submit-rating" disabled><i class="fa-solid fa-cloud-arrow-up"></i> Submit Rating & Retrain</button>
+                    </div>
+
+                    <!-- Right: Quick retrain notification and description -->
+                    <div class="simulator-display-info">
+                        <div class="terminal-box">
+                            <div class="terminal-header">
+                                <span class="t-dot red"></span>
+                                <span class="t-dot yellow"></span>
+                                <span class="t-dot green"></span>
+                                <span class="t-title">Retraining Terminal Logs</span>
+                            </div>
+                            <div class="terminal-body" id="simulator-terminal-body">
+                                <p class="t-log info-log">> Recommender System Simulator Online.</p>
+                                <p class="t-log info-log">> Select a movie, assign a star rating, and click submit.</p>
+                                <p class="t-log info-log">> The CF memory similarity graphs will automatically re-fit.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Global Notify Toast -->
+    <div id="toast-notify" class="toast-card" style="display: none;">
+        <i class="fa-solid fa-circle-check toast-icon"></i>
+        <span id="toast-message">Success! Model retrained.</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
