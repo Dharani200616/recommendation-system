@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMatch AI - Recommendation Insights</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="background-glows">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+    </div>
+
+    <div class="result-details-container glass-panel animated-slideUp">
+        <div class="result-header">
+            <a href="/" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Back to Dashboard</a>
+            <h1><i class="fa-solid fa-square-poll-vertical"></i> Analytical Insights</h1>
+        </div>
+
+        <div class="result-body-layout">
+            <div class="result-card glass-panel card-glow-purple">
+                <h3><i class="fa-solid fa-sliders"></i> Prediction Details</h3>
+                <p>Detailed algorithm breakdown for selected user profiles:</p>
+                
+                <div class="comparison-bar-chart">
+                    <div class="bar-item">
+                        <span class="bar-label">SVD Factorization Weight</span>
+                        <div class="bar-container">
+                            <div class="bar-fill purple-bg" style="width: 60%">60%</div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <span class="bar-label">Collaborative Filtering Weight</span>
+                        <div class="bar-container">
+                            <div class="bar-fill cyan-bg" style="width: 40%">40%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-card glass-panel card-glow-cyan">
+                <h3><i class="fa-solid fa-circle-nodes"></i> Model Latency & Architecture</h3>
+                <table class="report-table">
+                    <tr>
+                        <td><strong>Biases Checked</strong></td>
+                        <td>User Biases, Movie Biases</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Latent Space Dimension</strong></td>
+                        <td>15 (SVD K)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SGD Regularization</strong></td>
+                        <td>0.02</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SGD Learning Rate</strong></td>
+                        <td>0.005</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="reports-footer">
+            <p>Powered by CineMatch Engine v1.0.0 • Verified Matrix Latents</p>
+        </div>
+    </div>
+</body>
+</html>

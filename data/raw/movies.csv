@@ -1,0 +1,101 @@
+movie_id,title,genres,release_year
+1,Inception,Sci-Fi|Action|Thriller,2010
+2,The Matrix,Sci-Fi|Action,1999
+3,Interstellar,Sci-Fi|Drama|Adventure,2014
+4,Blade Runner 2049,Sci-Fi|Action|Drama,2017
+5,Star Wars: A New Hope,Sci-Fi|Action|Adventure,1977
+6,The Dark Knight,Action|Crime|Drama,2008
+7,Avengers: Endgame,Action|Sci-Fi|Adventure,2019
+8,Terminator 2: Judgment Day,Action|Sci-Fi,1991
+9,Spider-Man: Into the Spider-Verse,Animation|Action|Adventure,2018
+10,Mad Max: Fury Road,Action|Sci-Fi|Adventure,2015
+11,Gladiator,Action|Drama,2000
+12,Die Hard,Action|Thriller,1988
+13,Aliens,Sci-Fi|Action|Horror,1986
+14,Jurassic Park,Sci-Fi|Adventure|Action,1993
+15,Avatar,Sci-Fi|Action|Adventure,2009
+16,The Shawshank Redemption,Drama,1994
+17,The Godfather,Drama|Crime,1972
+18,Pulp Fiction,Drama|Crime,1994
+19,Forrest Gump,Drama|Romance,1994
+20,Fight Club,Drama|Thriller,1999
+21,Good Will Hunting,Drama|Romance,1997
+22,The Green Mile,Drama|Fantasy|Crime,1999
+23,Schindler's List,Drama|History,1993
+24,Whiplash,Drama|Music,2014
+25,The Social Network,Drama,2010
+26,Parasite,Drama|Thriller|Comedy,2019
+27,American Beauty,Drama,1999
+28,Casablanca,Drama|Romance|War,1942
+29,12 Angry Men,Drama,1957
+30,Citizen Kane,Drama|Mystery,1941
+31,Superbad,Comedy,2007
+32,The Hangover,Comedy,2009
+33,Monty Python and the Holy Grail,Comedy|Fantasy,1975
+34,Office Space,Comedy,1999
+35,Step Brothers,Comedy,2008
+36,Zoolander,Comedy,2001
+37,Anchor-Man,Comedy,2004
+38,Shaun of the Dead,Comedy|Horror,2004
+39,Hot Fuzz,Comedy|Action|Mystery,2007
+40,Groundhog Day,Comedy|Romance|Fantasy,1993
+41,The Big Lebowski,Comedy|Crime,1998
+42,Mean Girls,Comedy,2004
+43,Dumb and Dumber,Comedy,1994
+44,Ferris Bueller's Day Off,Comedy,1986
+45,Airplane!,Comedy,1980
+46,Titanic,Romance|Drama,1997
+47,The Notebook,Romance|Drama,2004
+48,Pride & Prejudice,Romance|Drama,2005
+49,La La Land,Romance|Drama|Musical,2016
+50,Before Sunrise,Romance|Drama,1995
+51,Before Sunset,Romance|Drama,2004
+52,Notting Hill,Romance|Comedy,1999
+53,Crazy Rich Asians,Romance|Comedy,2018
+54,About Time,Romance|Drama|Fantasy,2013
+55,500 Days of Summer,Romance|Comedy|Drama,2009
+56,Eternal Sunshine of the Spotless Mind,Romance|Sci-Fi|Drama,2004
+57,Amélie,Romance|Comedy,2001
+58,The Princess Bride,Romance|Adventure|Comedy,1987
+59,A Star Is Born,Romance|Drama|Music,2018
+60,Pretty Woman,Romance|Comedy,1990
+61,Toy Story,Animation|Adventure|Comedy|Family,1995
+62,Finding Nemo,Animation|Adventure|Comedy|Family,2003
+63,The Lion King,Animation|Adventure|Drama|Family,1994
+64,Spirited Away,Animation|Fantasy|Adventure|Family,2001
+65,Wall-E,Animation|Sci-Fi|Family,2008
+66,Up,Animation|Adventure|Comedy|Family,2009
+67,Shrek,Animation|Adventure|Comedy|Family|Fantasy,2001
+68,Inside Out,Animation|Adventure|Comedy|Family|Drama,2015
+69,"Monsters, Inc.",Animation|Comedy|Family|Fantasy,2001
+70,Ratatouille,Animation|Comedy|Family,2007
+71,Coco,Animation|Adventure|Family|Music,2017
+72,How to Train Your Dragon,Animation|Adventure|Family|Fantasy,2010
+73,My Neighbor Totoro,Animation|Fantasy|Family,1988
+74,Aladdin,Animation|Adventure|Comedy|Family|Musical,1992
+75,Beauty and the Beast,Animation|Fantasy|Family|Musical|Romance,1991
+76,The Shining,Horror|Drama|Thriller,1980
+77,Get Out,Horror|Mystery|Thriller,2017
+78,Psycho,Horror|Thriller|Mystery,1960
+79,A Quiet Place,Horror|Sci-Fi|Thriller,2018
+80,The Silence of the Lambs,Thriller|Crime|Drama,1991
+81,Se7en,Thriller|Crime|Drama|Mystery,1995
+82,The Sixth Sense,Thriller|Mystery|Drama,1999
+83,Hereditary,Horror|Mystery|Drama,2018
+84,The Conjuring,Horror|Thriller,2013
+85,A Nightmare on Elm Street,Horror,1984
+86,Alien,Horror|Sci-Fi,1979
+87,The Exorcist,Horror,1973
+88,Saw,Horror|Mystery|Thriller,2004
+89,Midsommar,Horror|Mystery|Drama|Thriller,2019
+90,Halloween,Horror|Thriller,1978
+91,The Lord of the Rings: The Fellowship of the Ring,Fantasy|Adventure|Action,2001
+92,Harry Potter and the Sorcerer's Stone,Fantasy|Adventure|Family,2001
+93,The Hobbit: An Unexpected Journey,Fantasy|Adventure|Action,2012
+94,Pirates of the Caribbean: The Curse of the Black Pearl,Adventure|Action|Fantasy,2003
+95,"The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",Adventure|Family|Fantasy,2005
+96,Stardust,Fantasy|Romance|Adventure,2007
+97,Pan's Labyrinth,Fantasy|Drama|War,2006
+98,Alice in Wonderland,Fantasy|Adventure|Family,2010
+99,Jumanji,Adventure|Family|Fantasy,1995
+100,Clash of the Titans,Fantasy|Action|Adventure,2010
